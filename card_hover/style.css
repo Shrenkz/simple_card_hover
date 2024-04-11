@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: consolas;
+  background: #333;
+}
+
+.container {
+  width: 1000px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  filter: invert(100%);
+}
+
+.card {
+  position: relative;
+  cursor: pointer;
+}
+
+.card .face {
+  transition: 0.5s;
+  width: 300px;
+}
+
+.container .card .face.face1 {
+  position: relative;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.container .card:hover .face.face1 {
+  background-color: #ff0057;
+  transform: translateY(0);
+}
+
+.container .card .face.face1 .content {
+  opacity: 0.2;
+  transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content {
+  opacity: 1;
+}
+
+.container .card:hover .face.face1 .content img {
+  filter: invert(0);
+}
+
+.container .card .face.face1 .content h3 {
+  font-size: 24px;
+  color: #fff;
+  margin: 0 0 46px;
+  padding: 0;
+  text-align: center;
+}
+
+.container .card .face.face2 {
+  position: relative;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  box-sizing: border-box;
+  translate: translateY(-100px);
+  top: -30%;
+}
+
+.container .card:hover .face.face2 {
+  position: relative;
+  top: 0;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  border: 2px solid black;
+  padding: 10px;
+  font-weight: 900;
+}
+
+@media screen and (max-width: 950px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card{
+    margin: 3rem 0;
+    transition: 0.5s;
+  }
+
+  .card .face {
+    width: 500px;
+  }
+
+  .container .card .face.face2 {
+    width: 500px;
+    position: absolute;
+    top: 40%;
+  }
+}
+
+@media screen and (max-width: 600px){
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .card .face {
+    width: 300px;
+  }
+
+  .container .card .face.face2 {
+    width: 300px;
+    position: absolute;
+    top: 40%;
+  }
+}
